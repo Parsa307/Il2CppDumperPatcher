@@ -1,5 +1,5 @@
 echo Patching...
-# Copy the file to Il2CppDumper directory
+# Copy the file to Il2CppDumper directory.
 cp Program.cs Il2CppDumper
 # Searches for word and replace it.
 sed -i 's|var writer = new StreamWriter(new FileStream(outputDir + "dump.cs", FileMode.Create), new UTF8Encoding(false));|var writer = new StreamWriter(new FileStream(Path.Combine(outputDir, "dump.cs"), FileMode.Create), new UTF8Encoding(false));|g' Il2CppDumper/Outputs/Il2CppDecompiler.cs
